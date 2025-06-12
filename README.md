@@ -1,4 +1,4 @@
-# Heesoo's Data Analyst Portfolio
+# Hisu's Data Analyst Portfolio
 
 Welcome to my data portfolio. My goal is to explore data in meaningful, creative ways while building practical skills in analysis, visualization, and machine learning. Each project is guided by curiosity, real-world relevance, and a habit of reflection.
 
