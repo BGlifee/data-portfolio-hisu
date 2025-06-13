@@ -15,4 +15,4 @@ Welcome to my data portfolio. My goal is to explore data in meaningful, creative
 
 ## 📝 Medium Reflections
 I publish project insights and reflections on Medium.  
-[🔗 Read them here](https://medium.com/@yourusername)
+[🔗 Read them here](https://medium.com/@hisukim33)
