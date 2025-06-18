@@ -1,1 +1,86 @@
 Medium published - https://medium.com/@hisukim33/what-my-youtube-history-reveals-about-me-and-how-i-turned-it-into-a-data-story-019917e43249
+# YouTube Viewing Pattern Analysis: A Personal Insight
+
+## 🎯 Objective
+
+This analysis explores my YouTube viewing trends over a specific period, with the goal of understanding behavioral shifts and identifying moments that deviate from the norm. The primary aim is not only to uncover which channels I engaged with most, but also to reflect on what those patterns might indicate about my mental state or situational context.
+
+---
+
+## 📊 Dataset Overview
+
+* **Data Source**: My YouTube watch/subscription history.
+* **Preprocessing**: Extracted view counts grouped by `year_month` and `channel`, and transformed into a pivot table.
+* **Focus Channels**: \['1분순삭', 'AKA', '리쥬라이크 LIJULIKE', '시간 훅 가는 쇼츠', '태요미네']
+
+---
+
+## 🔍 Key Findings
+
+### 1. 리쥬라이크 LIJULIKE was my dominant channel
+
+* Across the entire timeline, this channel consistently maintained the highest share of views.
+* Its content likely resonated with my steady emotional or motivational state during this period.
+
+### 2. 2025 saw a notable shift: AKA suddenly surged
+
+* Starting in 2025, AKA’s viewing share sharply increased.
+* This kind of deviation often signals a shift in mood, interest, or situation.
+* It’s likely that a personal event or life phase triggered a preference change.
+
+### 3. Visualization Highlights
+
+* A horizontal stacked bar chart was used to clearly show the percentage share each channel had per month.
+* Custom color mapping was applied to ensure consistent visual identification of each channel.
+
+---
+
+## 🤔 Reflection on Data Approach
+
+### What worked well:
+
+* The purpose-driven approach helped generate meaningful interpretation.
+* Vectorized calculations in Pandas made the percentage analysis efficient and reproducible.
+* Highlighting specific time-based changes led to valuable personal insights.
+
+### What could improve:
+
+* **Channel names** are too personalized; for broader understanding, I should have categorized them (e.g., education, entertainment, vlog).
+* **리쥬라이크**, though central to my pattern, wasn’t visually emphasized as much as it could have been.
+
+### Improvement Ideas:
+
+* Add a new column with manually assigned categories.
+* Aggregate and visualize viewing behavior by category.
+* Create a focused timeline line chart for 리쥬라이크 and AKA to track shifts more clearly.
+
+---
+
+## 🧠 Why This Matters
+
+This project isn’t just about YouTube stats. It’s a reflection tool.
+By visualizing what I consumed over time, I can indirectly trace emotional cycles, phases of productivity, or even burnout.
+
+In portfolios, this stands out because it connects **data with human context**—which is the true power of data analysis.
+
+---
+
+## 🗂️ Next Steps
+
+1. Add a category classification for each channel.
+2. Write a short narrative about what might have changed in 2025.
+3. Turn this into a Medium blog post for broader storytelling appeal.
+
+---
+
+## 🔗 Tools Used
+
+* Python (Pandas, Matplotlib)
+* Jupyter Notebook
+* Visual Style: Custom color mapping and horizontal stacked bar chart
+
+---
+
+## ✅ Summary
+
+This project serves as a meaningful and personalized data analysis piece. It translates raw behavioral data into insightful visual storytelling, tying together emotion, time, and digital consumption. It's not just portfolio-worthy — it's memorable.
