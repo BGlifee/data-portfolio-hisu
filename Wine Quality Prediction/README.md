@@ -1,92 +1,120 @@
-🎯 Objective
-This project explores the relationship between a wine's chemical properties and its perceived quality, with the goal of understanding which compounds most strongly influence taste, and how accurately we can predict quality using machine learning models. Beyond prediction, the aim is to demystify what "good wine" might chemically mean.
+# 🍷 Wine Quality Prediction
 
-📊 Dataset Overview
-Data Source: UCI Wine Quality Dataset – Red Wine
+## 📌 Project Description
 
-Observations: 1,599 red wine samples, each with 11 physicochemical features and a quality score (0–10)
+This project explores a classic regression problem using the UCI Wine Quality Dataset. The goal is to predict wine quality based on physicochemical features and understand which features contribute most to wine scoring. The workflow includes exploratory data analysis, outlier handling, feature scaling, and model comparison (Linear Regression, Random Forest, and XGBoost).
 
-Preprocessing:
+---
 
-Removed outliers in free sulfur dioxide and total sulfur dioxide via IQR
+## 📊 Dataset Overview
 
-Applied log transformation for improved model stability
+* **Source**: UCI Machine Learning Repository
+* **Samples**: 1,599 red wine samples
+* **Target**: `quality` (integer score between 3 and 8)
+* **Features**:
 
-Created a correlation heatmap to evaluate feature interactions
+  * fixed acidity
+  * volatile acidity
+  * citric acid
+  * residual sugar
+  * chlorides
+  * free sulfur dioxide
+  * total sulfur dioxide
+  * density
+  * pH
+  * sulphates
+  * alcohol
 
-🔍 Key Findings
-1. Alcohol is the kingmaker of wine quality
-Among all features, alcohol had the strongest positive correlation with wine quality (R² ≈ 0.47).
+---
 
-This aligns with the sensory perception that higher alcohol often accompanies more body and richness in red wine.
+## 🔍 Key Steps
 
-2. Sulfur dioxide variables introduced subtle complexity
-total sulfur dioxide and free sulfur dioxide weren’t dominant predictors alone, but including them alongside citric acid, density, and fixed acidity noticeably improved model performance.
+### 1. Exploratory Data Analysis
 
-Especially in tree-based models, they helped uncover non-linear interactions that linear models missed.
+* Distribution of quality scores visualized using countplots.
+* Boxplots used to detect outliers, especially for sulfur dioxide variables.
+* Correlation heatmap created using a lower-triangle mask to reveal inter-feature relationships.
 
-3. Random Forest outperformed other models
-Model	MSE ↓	R² ↑
-Linear Regression	0.555	0.155
-Random Forest	0.450	0.320
-XGBoost	0.498	0.247
+### 2. Outlier Removal
 
-Random Forest achieved the best performance in both MSE and R² with just 5 features.
+* IQR method applied to remove outliers from `free sulfur dioxide` and `total sulfur dioxide`.
 
-XGBoost showed promise, but underperformed slightly due to lack of tuning or perhaps insufficient feature complexity.
+### 3. Feature Selection
 
-📈 Visualization Highlights
-📌 Lower-triangle heatmap revealed meaningful correlations between chemical features, helping avoid redundancy.
+* Initially tested prediction using a subset of features: `citric acid`, `density`, and `fixed acidity`.
+* Later added `free sulfur dioxide` and `total sulfur dioxide` for improved accuracy.
 
-📌 Bar chart of feature importances from the Random Forest model clearly highlighted the influence of density and total sulfur dioxide.
+### 4. Modeling & Evaluation
 
-📌 Model performance comparison chart displayed the strengths and weaknesses of each regression model using side-by-side bar plots.
+* Applied log transformation to `quality` for better distribution.
+* Evaluated models using 5-fold cross-validation with Mean Squared Error (MSE) and R².
+* Models tested:
 
-🤔 Reflection on Data Approach
-What worked well:
-I iteratively built up from simple models to complex ones, giving me insight into what each model learned.
+  * Linear Regression
+  * Random Forest Regressor
+  * XGBoost Regressor
 
-Focused feature selection enabled clearer interpretation.
+### 5. Feature Importance
 
-Visualization at each step supported decision-making (e.g., removing outliers, selecting features).
+* Extracted from Random Forest and visualized using a horizontal bar chart.
 
-What could improve:
-A more diverse feature set (including alcohol, sulphates, volatile acidity) would likely boost performance further.
+---
 
-XGBoost wasn’t tuned—grid search or Bayesian optimization could improve its potential.
+## 🏆 Results
 
-Improvement Ideas:
-Perform PCA to reduce dimensionality and observe its effect on model performance.
+| Model             | MSE   | R²    |
+| ----------------- | ----- | ----- |
+| Linear Regression | 0.577 | 0.121 |
+| Random Forest     | 0.450 | 0.320 |
+| XGBoost           | 0.498 | 0.247 |
 
-Explore classification framing (e.g., low vs high quality) to simplify the target.
+Random Forest performed the best overall with the highest R² and lowest MSE.
 
-Visualize predicted vs. actual wine quality with regression line overlays.
+---
 
-🧠 Why This Matters
-This project isn't just about wine—it's about how data can explain human sensory experiences.
-By analyzing chemical fingerprints, we inch closer to understanding how structured data translates into subjective perception.
+## 📈 Visualization Highlights
 
-For aspiring data scientists, it demonstrates a clean workflow:
+* Lower-triangle heatmap to avoid redundant correlation.
+* Bar plot comparison of model performance.
+* Feature importance plot for interpretability.
 
-data prep → EDA → modeling → interpretation → storytelling.
+---
 
-🗂️ Next Steps
-Expand feature set to include alcohol, sulphates, pH, etc.
+## 📦 Tools Used
 
-Tune XGBoost and test LightGBM.
+* Python (pandas, numpy, matplotlib, seaborn)
+* scikit-learn
+* xgboost
+* Jupyter Notebook
 
-Convert this analysis into an interactive web app (e.g., Streamlit or Flask).
+---
 
-🔗 Tools Used
-Python (pandas, seaborn, matplotlib, scikit-learn, xgboost)
+## 🤔 Reflections
 
-Jupyter Notebook
+This project reinforced the importance of:
 
-Visualizations: correlation heatmap, feature importance bar chart, model comparison bar chart
+* Preprocessing steps like outlier removal and log transformation
+* Trying multiple models to find the best fit
+* Visual storytelling to enhance interpretation
 
-✅ Summary
-This project translates the chemistry of wine into data, and the data into insight.
-It balances interpretability and performance, while showing that even five features can teach us something meaningful about what makes wine taste “good.”
-It belongs in a portfolio not just for the technical execution—but for the curiosity it conveys.
+---
+
+## 📁 Folder Structure
+
+```
+/Wine Quality Prediction
+|-- EDA.ipynb
+|-- modeling.ipynb
+|-- heatmap.png
+|-- feature_importance.png
+|-- README.md
+```
+
+---
+
+## 🔗 Reference
+
+* [UCI Wine Quality Dataset](https://archive.ics.uci.edu/ml/datasets/wine+quality)
+
 
 
