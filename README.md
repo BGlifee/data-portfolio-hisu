@@ -4,7 +4,7 @@ Welcome to my data portfolio. My goal is to explore data in meaningful, creative
 
 ## 🔭 Projects Overview
 
-1. **[Wine Quality Prediction](./wine-quality)**  
+1. **[Wine Quality Prediction](./Wine Quality Prediction)**  
    A classic regression problem where I tested multiple models and learned the impact of feature scaling and outlier removal.
 
 2. **[Glassdoor Job Analysis](./glassdoor-jobs)**  
