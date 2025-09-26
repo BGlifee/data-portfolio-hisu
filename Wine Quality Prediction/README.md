@@ -99,6 +99,8 @@ This project reinforced the importance of:
 
 ---
 
+Potentially upgrade
+
 ## 📁 Folder Structure
 
 ```
